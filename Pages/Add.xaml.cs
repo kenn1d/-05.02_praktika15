@@ -26,12 +26,15 @@ namespace praktika15.Pages
                 Document = documentContext;
 
                 if(File.Exists(documentContext.Src))
+                {
                     src.Source = new BitmapImage(new System.Uri(documentContext.Src));
+                    s_src = documentContext.Src;
+                }
                 
                 tbName.Text = documentContext.Name;
                 tbUser.Text = documentContext.User;
                 tbCode.Text = documentContext.IdDocument.ToString();
-                tbDate.Text = documentContext.Date.ToString("dd.MM.yyyy");
+                tbDate.Text = documentContext.Date;
                 tbStatus.SelectedIndex = documentContext.Status;
                 tbDirection.Text = documentContext.Direction;
             }
@@ -83,7 +86,7 @@ namespace praktika15.Pages
                 MessageBox.Show("Необходимо указать дату поступления");
                 return;
             }
-            if (tbStatus.SelectedIndex != -1)
+            if (tbStatus.SelectedIndex == -1)
             {
                 MessageBox.Show("Необходимо выбрать статус документа");
                 return;
@@ -100,7 +103,7 @@ namespace praktika15.Pages
                     Src = s_src,
                     Name = tbName.Text,
                     IdDocument = Convert.ToInt32(tbCode.Text),
-                    Date = DateTime.Parse(tbDate.Text),
+                    Date = tbDate.Text,
                     Status = tbStatus.SelectedIndex,
                     Direction = tbDirection.Text
                 };
@@ -112,7 +115,7 @@ namespace praktika15.Pages
                 Document.Src = s_src;
                 Document.Name = tbName.Text;
                 Document.IdDocument = Convert.ToInt32(tbCode.Text);
-                Document.Date = DateTime.Parse(tbDate.Text);
+                Document.Date = tbDate.Text;
                 Document.Status = tbStatus.SelectedIndex;
                 Document.Direction = tbDirection.Text;
                 Document.Save();

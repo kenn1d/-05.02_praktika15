@@ -12,6 +12,7 @@ namespace praktika15.Pages
         public Main()
         {
             InitializeComponent();
+            CreateUI();
         }
 
         public void CreateUI()

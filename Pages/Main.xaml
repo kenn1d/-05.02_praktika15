@@ -20,7 +20,7 @@
                     HorizontalAlignment="Right" Margin="10" Background="White"/>
         </Grid>
         
-        <ScrollViewer Margin="10,10,10,55">
+        <ScrollViewer Margin="10,60,10,55">
             <StackPanel x:Name="Parent"/>
         </ScrollViewer>
             

@@ -11,7 +11,7 @@ namespace praktika15.Models
         public string Name { get; set; }
         public string User {  get; set; }
         public int IdDocument { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public int Status { get; set; }
         public string Direction { get; set; }
     }

@@ -24,7 +24,7 @@ namespace praktika15.Classes
                     Name = dataDocuments.GetString(2),
                     User = dataDocuments.GetString(3),
                     IdDocument = dataDocuments.GetInt32(4),
-                    Date = dataDocuments.GetDateTime(5),
+                    Date = dataDocuments.GetString(5),
                     Status = dataDocuments.GetInt32(6),
                     Direction = dataDocuments.GetString(7)
                 });
@@ -55,7 +55,7 @@ namespace praktika15.Classes
                         $"[Наименование] = '{this.Name}', "+
                         $"[Ответственный] = '{this.User}', "+
                         $"[Код документа] = '{this.IdDocument}', " +
-                        $"[Дата поступления] = '{this.Date.ToString("dd.MM.yyyy")}', " +
+                        $"[Дата поступления] = '{this.Date}', " +
                         $"[Статус] = {this.Status}," +
                         $"[Направление] = '{this.Direction}' " +
                     $"WHERE " +
@@ -78,7 +78,7 @@ namespace praktika15.Classes
                         $"'{this.Name}', " +
                         $"'{this.User}', " +
                         $"'{this.IdDocument}', " +
-                        $"'{this.Date.ToString("dd.MM.yyyy")}', " +
+                        $"'{this.Date}', " +
                         $"{this.Status}, " +
                         $"'{this.Direction}')", connection);
             }
