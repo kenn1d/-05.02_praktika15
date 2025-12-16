@@ -1,6 +1,4 @@
-﻿using praktika15.Classes;
-using praktika15.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,20 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace praktika15
+namespace praktika15.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Main.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Main : Page
     {
-        public static MainWindow init;
-        public List<DocumentContext> AllDocuments = new DocumentContext().AllDocuments();
-        public MainWindow()
+        public Main()
         {
             InitializeComponent();
-
-            init = this;
         }
     }
 }

@@ -10,14 +10,14 @@ namespace praktika15.Classes
 {
     public class DocumentContext : Document, IDocument
     {
-        public List<Document> AllDocuments()
+        public List<DocumentContext> AllDocuments()
         {
-            List<Document> allDocuments = new List<Document>();
+            List<DocumentContext> allDocuments = new List<DocumentContext>();
 
             OleDbConnection connection = DBConnection.Connection();
             OleDbDataReader dataDocuments = DBConnection.Query("SELECT * FROM [Документы]", connection);
             while (dataDocuments.Read()) {
-                allDocuments.Add(new Document()
+                allDocuments.Add(new DocumentContext()
                 {
                     Id = dataDocuments.GetInt32(0),
                     Src = dataDocuments.GetString(1),
