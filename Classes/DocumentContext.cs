@@ -26,7 +26,7 @@ namespace praktika15.Classes
                     IdDocument = dataDocuments.GetInt32(4),
                     Date = dataDocuments.GetDateTime(5),
                     Status = dataDocuments.GetInt32(6),
-                    Direction = dataDocuments.GetInt32(7)
+                    Direction = dataDocuments.GetString(7)
                 });
             }
             DBConnection.CloseConnection(connection);

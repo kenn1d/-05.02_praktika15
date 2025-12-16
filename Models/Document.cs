@@ -13,6 +13,6 @@ namespace praktika15.Models
         public int IdDocument { get; set; }
         public DateTime Date { get; set; }
         public int Status { get; set; }
-        public int Direction { get; set; }
+        public string Direction { get; set; }
     }
 }
