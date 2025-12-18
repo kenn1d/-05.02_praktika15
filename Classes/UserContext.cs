@@ -51,8 +51,8 @@ namespace praktika15.Classes
             {
                 DBConnection.Query(
                     $"INSERT INTO " +
-                        $"[Ответственные]( " +
-                            $"[Наименование]," +
+                        $"[Ответственные] ( " +
+                            $"[Наименование])" +
                     $" VALUES (" +
                         $"'{this.Name}')", connection);
             }

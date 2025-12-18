@@ -14,7 +14,7 @@
             Grid.Column="0" Margin="10"/>
         <Label x:Name="lUser" Content="Ответственный: Иванов И.И." VerticalAlignment="Top"
             Grid.Column="0" Margin="10, 35"/>
-        <Label Content="Операции" FontWeight="Bold" VerticalAlignment="Top"
+        <Label Content="Операции" FontWeight="Bold" VerticalAlignment="Top" HorizontalContentAlignment="Right"
             Grid.Column="1" Margin="10"/>
 
         <Button Content="Изменить" Click="EditDocument" Margin="0, 35, 120, 0" Width="100" Height="25"

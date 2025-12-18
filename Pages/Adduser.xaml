@@ -23,7 +23,7 @@
         <Label Content="Укажите наименование:" VerticalAlignment="Top" Margin="10,60, 10, 0"/>
         <TextBox x:Name="tbName" VerticalAlignment="Top" Height="25" Margin="10,85,10,0"/>
         <Button Content="Сохранить" x:Name="bthAdd" Click="AddUser" VerticalAlignment="Top" HorizontalAlignment="Right"
-            Width="75" Height="25" Margin="0,115,715,0" Background="White"/>
+            Width="75" Height="25" Margin="10,115,715,0" Background="White"/>
 
     </Grid>
 </Page>
