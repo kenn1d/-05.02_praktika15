@@ -17,11 +17,12 @@ namespace praktika15.Pages
     public partial class Add : Page
     {
         DocumentContext Document;
+        UserContext User;
         string s_src = "";
-        public Add(DocumentContext documentContext = null)
+        public Add(DocumentContext documentContext = null, UserContext userContext = null)
         {
             InitializeComponent();
-            if (documentContext != null )
+            if (documentContext != null)
             {
                 Document = documentContext;
 
@@ -30,14 +31,29 @@ namespace praktika15.Pages
                     src.Source = new BitmapImage(new System.Uri(documentContext.Src));
                     s_src = documentContext.Src;
                 }
-                
+
                 tbName.Text = documentContext.Name;
-                tbUser.Text = documentContext.User;
+                if (userContext != null)
+                    foreach (UserContext user in MainWindow.init.AllUsers)
+                    {
+                        TextBlock textBlock = new TextBlock();
+                        textBlock.Text = user.Name;
+                        textBlock.Tag = user;
+                        tbUser.Items.Add(textBlock);
+                    }
                 tbCode.Text = documentContext.IdDocument.ToString();
                 tbDate.Text = documentContext.Date;
                 tbStatus.SelectedIndex = documentContext.Status;
                 tbDirection.Text = documentContext.Direction;
             }
+            if (userContext == null)
+                foreach (UserContext user in MainWindow.init.AllUsers)
+                {
+                    TextBlock textBlock = new TextBlock();
+                    textBlock.Text = user.Name;
+                    textBlock.Tag = user;
+                    tbUser.Items.Add(textBlock);
+                }
         }
 
         private void Back(object sender, RoutedEventArgs e)
@@ -71,7 +87,7 @@ namespace praktika15.Pages
                 MessageBox.Show("Необходимо указать наименование");
                 return;
             }
-            if (tbUser.Text.Length == 0)
+            if (tbUser.SelectedIndex == -1)
             {
                 MessageBox.Show("Необходимо указать ответственного");
                 return;
@@ -120,10 +136,11 @@ namespace praktika15.Pages
                 Document.Date = tbDate.Text;
                 Document.Status = tbStatus.SelectedIndex;
                 Document.Direction = tbDirection.Text;
-                Document.Save();
+                Document.Save(true);
                 MessageBox.Show("Документ изменён");
             }
             MainWindow.init.AllDocuments = new DocumentContext().AllDocuments();
+            MainWindow.init.AllUsers = new UserContext().AllUsers();
             MainWindow.init.frame.Navigate(new Main());
         }
     }

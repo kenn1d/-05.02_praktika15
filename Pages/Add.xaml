@@ -28,7 +28,9 @@
         <Label Content="Укажите наименование:" VerticalAlignment="Top" Margin="170,60, 10, 0"/>
         <TextBox x:Name="tbName" VerticalAlignment="Top" Height="25" Margin="170,85,10,0"/>
         <Label Content="Укажите ответственного:" VerticalAlignment="Top" Margin="170,110, 10, 0"/>
-        <TextBox x:Name="tbUser" VerticalAlignment="Top" Height="25" Margin="170,135,10,0"/>
+        <ComboBox x:Name="tbUser" VerticalAlignment="Top" Height="25" Margin="170,135,10,0">
+            
+        </ComboBox>
         <Label Content="Укажите код документа:" VerticalAlignment="Top" Margin="170,160, 10, 0"/>
         <TextBox x:Name="tbCode" VerticalAlignment="Top" Height="25" Margin="170,185,10,0"/>
         <Label Content="Укажите дату поступления:" VerticalAlignment="Top" Margin="170,210, 10, 0"/>

@@ -1,11 +1,6 @@
 ﻿using praktika15.Classes;
-using praktika15.Interfaces;
-using praktika15.Models;
-using System;
-using System.Net.NetworkInformation;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
 
 namespace praktika15.Pages
 {
@@ -51,7 +46,7 @@ namespace praktika15.Pages
             else
             {
                 User.Name = tbName.Text;
-                User.Save();
+                User.Save(true);
                 MessageBox.Show("Документ изменён");
             }
             MainWindow.init.AllUsers = new UserContext().AllUsers();

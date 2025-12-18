@@ -43,7 +43,7 @@ namespace praktika15.Classes
                     $"UPDATE " +
                         $"[Ответственные] " +
                     $"SET " +
-                        $"[Наименование] = '{this.Name}', " +
+                        $"[Наименование] = '{this.Name}' " +
                     $"WHERE " +
                         $"[Код] = {this.Id}", connection);
             }

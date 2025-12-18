@@ -20,7 +20,7 @@ namespace praktika15.Elements
             lUser.Content = "Ответственный: " + documentContext.User;
             lCode.Content = "Код документа: " + documentContext.IdDocument;
             lDate.Content = "Дата поступления: " + documentContext.Date;
-            lStatus.Content = documentContext.Status == 0 ? "Статус: Входящий" : "Статус: Исходящмй";
+            lStatus.Content = documentContext.Status == 0 ? "Статус: Входящий" : "Статус: Исходящий";
             lDirection.Content = "Направление: " + documentContext.Direction; 
         
             this.Document = documentContext;
