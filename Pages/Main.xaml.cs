@@ -31,5 +31,10 @@ namespace praktika15.Pages
         {
             MainWindow.init.frame.Navigate(new Pages.Add());
         }
+
+        private void Go(object sender, RoutedEventArgs e)
+        {
+            MainWindow.init.frame.Navigate(new Pages.ViewUsers());
+        }
     }
 }

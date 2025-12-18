@@ -11,6 +11,7 @@ namespace praktika15
     {
         public static MainWindow init;
         public List<DocumentContext> AllDocuments = new DocumentContext().AllDocuments();
+        public List<UserContext> AllUsers = new UserContext().AllUsers();
         public MainWindow()
         {
             InitializeComponent();
