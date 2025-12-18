@@ -102,6 +102,7 @@ namespace praktika15.Pages
                 {
                     Src = s_src,
                     Name = tbName.Text,
+                    User = tbUser.Text,
                     IdDocument = Convert.ToInt32(tbCode.Text),
                     Date = tbDate.Text,
                     Status = tbStatus.SelectedIndex,
@@ -114,6 +115,7 @@ namespace praktika15.Pages
             {
                 Document.Src = s_src;
                 Document.Name = tbName.Text;
+                Document.User = tbUser.Text;
                 Document.IdDocument = Convert.ToInt32(tbCode.Text);
                 Document.Date = tbDate.Text;
                 Document.Status = tbStatus.SelectedIndex;
